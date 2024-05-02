@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Employee</title>
+    <link rel="stylesheet" href="addemployeestyle.css">
+  </head>
+  <body class="bg-[#eeeeee]">
+
+    <div class="flex mt-2 justify-center bg-[#eeeeee] ">    <!--Add Employee account page-->
+        <div class=" w-11/12">
+    
+          <%- include('./partials/adminprofile.ejs') %>
+            
+          <div class="flex justify-center py-5 "><!--add new product title-->
+            <div class=" bg-white border border-slate-300 py-2 px-3 ">
+                <div class="text-black text-xl font-bold font-['Montserrat'] leading-[30px]">
+                  Add New Employee Account
+                </div>
+              </div>
+          </div>
+         <form >
+          <div class="flex justify-center mb-20"> <!--add new employee form-->
+            <div class="w-full md:w-11/12 border border-slate-300 bg-white py-5 p-4 md:px-5 xl:px-10">
+              <div class="md:flex justify-around text-slate-500 text-lg font-bold font-['Montserrat']">
+                <div class="">
+                <div >First Name</div>
+                <input id="firstname" name="firstname" type="text" autocomplete="name"  required
+                  class="w-full md:w-72 lg:w-96  focus:outline-none focus:ring-sky-500 focus:border-sky-500 focus:z-10 px-5 py-3 mt-2  rounded-lg border border-solid shadow-sm bg-white bg-opacity-60 border-zinc-300 placeholder-slate-500 placeholder:text-sm placeholder:font-normal font-medium text-md text-black" 
+                  placeholder="first name"  >
+    
+                  <div >Last Name</div>
+                <input id="lastname" name="lastname" type="text" autocomplete="name"  required
+                  class="w-full md:w-72 lg:w-96 focus:outline-none focus:ring-sky-500 focus:border-sky-500 focus:z-10 px-5 py-3 mt-2  rounded-lg border border-solid shadow-sm bg-white bg-opacity-60 border-zinc-300 placeholder-slate-500 placeholder:text-sm placeholder:font-normal font-medium text-md text-black" 
+                  placeholder="last name"  >
+    
+                  <div >Email</div>
+                <input id="email" name="email" type="email" autocomplete="email"   required
+                  class="w-full md:w-72 lg:w-96 focus:outline-none focus:ring-sky-500 focus:border-sky-500 focus:z-10 px-5 py-3 mt-2  rounded-lg border border-solid shadow-sm bg-white bg-opacity-60 border-zinc-300 placeholder-slate-500 placeholder:text-sm placeholder:font-normal font-medium text-md text-black" 
+                  placeholder="lugi@gmail.com"  >
+                  <div class="text-rose-500 md:text-center text-base md:text-lg" id="emailerror"></div>
+
+                  <div>Phone No.</div>
+                <input id="phone" name="phone" type="number" autocomplete="cc-number" required
+                  class="w-full md:w-72 lg:w-96 focus:outline-none focus:ring-sky-500 focus:border-sky-500 focus:z-10 px-5 py-3 mt-2  rounded-lg border border-solid shadow-sm bg-white bg-opacity-60 border-zinc-300 placeholder-slate-500 placeholder:text-sm placeholder:font-normal font-medium text-md text-black" 
+                  placeholder="+251--------"  >
+                  <div class="text-rose-500 md:text-center text-base md:text-lg" id="phoneerror"></div>
+
+                  <div>Age</div>
+                <input id="age" name="age" type="number" autocomplete="cc-number"  required
+                  class="w-full md:w-72 lg:w-96 focus:outline-none focus:ring-sky-500 focus:border-sky-500 focus:z-10 px-5 py-3 mt-2  rounded-lg border border-solid shadow-sm bg-white bg-opacity-60 border-zinc-300 placeholder-slate-500 placeholder:text-sm placeholder:font-normal font-medium text-md text-black" 
+                  placeholder="0"  >
+    
+                  
+              </div>
+              <div class="justify-center">
+                <div>Address</div>
+                <input id="address" name="address" type="text" autocomplete="name"  required
+                  class="w-full md:w-72 lg:w-96 focus:outline-none focus:ring-sky-500 focus:border-sky-500 focus:z-10 px-5 py-3 mt-2  rounded-lg border border-solid shadow-sm bg-white bg-opacity-60 border-zinc-300 placeholder-slate-500 placeholder:text-sm placeholder:font-normal font-medium text-md text-black" 
+                  placeholder="addis ababa"  >
+
+
+                <div>Gender</div>
+                <select id="gender" name="gender" required
+                class="w-full md:w-72 lg:w-96 focus:outline-none focus:ring-sky-500 focus:border-sky-500 focus:z-10 px-5 py-3 mt-2  rounded-lg border border-solid shadow-sm bg-white bg-opacity-60 border-zinc-300 placeholder-slate-500 placeholder:text-sm placeholder:font-normal font-medium text-md text-black" >
+                  <option value="">Select...</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+
+                <div>Role</div>
+                <select id="role" name="role" required
+                class="w-full md:w-72 lg:w-96 focus:outline-none focus:ring-sky-500 focus:border-sky-500 focus:z-10 px-5 py-3 mt-2  rounded-lg border border-solid shadow-sm bg-white bg-opacity-60 border-zinc-300 placeholder-slate-500 placeholder:text-sm placeholder:font-normal font-medium text-md text-black" >
+                  <option value="">Select...</option>
+                  <option value="sales">Sales</option>
+                  <option value="technician">Technician</option>
+                  <option value="admin">Admin</option>
+                </select>
+               
+    
+                  <div>Scanned ID</div>
+                <input id="scannedid" name="scannedid" type="file" 
+                  class="w-full md:w-72 lg:w-96 focus:outline-none focus:ring-sky-500 focus:border-sky-500 focus:z-10 px-5 py-3 mt-2  rounded-lg border border-solid shadow-sm bg-white bg-opacity-60 border-zinc-300 placeholder-slate-500 placeholder:text-sm placeholder:font-normal font-medium text-md text-black" 
+                  placeholder=""  >
+
+                  <div>Password</div>
+                <input id="password" name="password" type="password"  required
+                  class="w-full md:w-72 lg:w-96 focus:outline-none focus:ring-sky-500 focus:border-sky-500 focus:z-10 px-5 py-3 mt-2  rounded-lg border border-solid shadow-sm bg-white bg-opacity-60 border-zinc-300 placeholder-slate-500 placeholder:text-sm placeholder:font-normal font-medium text-md text-black" 
+                  placeholder="***"  >
+                  <div class="text-rose-500 md:text-center text-base md:text-lg" id="passworderror"></div>
+
+              </div>
+              </div>
+              <div class="flex justify-center py-4">
+                <button >
+                  <div class="p-1 md:p-2 bg-sky-500 hover:bg-sky-600 rounded justify-center items-center gap-2 flex">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" 
+                  class="w-6 h-6 text-white">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                  </svg>
+                    <div class="text-white text-base font-medium md:font-semibold font-['Montserrat'] leading-normal">Add New Employee Account</div>
+                </div>
+                </button>
+              </div>
+              
+            </div>
+          </div>
+        </form>
+          
+        </div>
+      </div>
+      <script src="/togglemenu.js"></script>
+      <script>
+        const form = document.querySelector('form');
+        const emailError = document.querySelector('#emailerror');
+        const passwordError = document.querySelector('#passworderror');
+        const phoneError = document.querySelector('#phoneerror');
+        
+
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          
+          //reset error values
+          emailError.textContent = ''
+          passwordError.textContent = ''
+          phoneError.textContent = ''
+
+          //get the values
+          const firstName = form.firstname.value;
+          const lastName = form.lastname.value;
+          const email = form.email.value;
+          const phone = form.phone.value;
+          const age = form.age.value;
+          const address = form.address.value;
+          const gender = form.gender.value;
+          const role = form.role.value;
+         //const scanndeId = form.scanndeid.value;
+          const password = form.password.value;
+          console.log( firstName, lastName, email, phone, age, address, gender, role, password )
+          try {
+            const res = await fetch('/addemployee', {
+              method: 'POST',
+              body: JSON.stringify({firstName, lastName, email, phone, age, address, gender, role, password }),
+              headers: {'Content-Type': 'application/json'}
+            })
+            const data = await res.json();
+            console.log(data);
+            if (data.errors){
+              emailError.textContent = data.errors.email
+              passwordError.textContent = data.errors.password
+              phoneError.textContent = data.errors.phone
+            }
+          } catch (err) {
+            console.log(err);
+          }
+        })
+      </script>
+  </body>
+</html>

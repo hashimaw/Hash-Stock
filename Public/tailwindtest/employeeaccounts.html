@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Accounts</title>
+    <link rel="stylesheet" href="employeeaccountsstyle.css">
+  </head>
+  <body class="bg-[#eeeeee]">
+
+    <div class="flex mt-2 justify-center bg-[#eeeeee] mb-20 ">    <!--Employee Accounts page-->
+        <div class=" w-11/12">
+
+          <%- include('./partials/adminprofile.ejs') %>
+
+          <div class="flex justify-center py-5"><!--accounts title-->
+    
+            <div class="bg-white border border-slate-300">
+              <div class="md:flex p-2 gap-3">
+                <div class="md:flex md:items-center text-black text-center text-xl font-bold font-['Montserrat'] ">
+                 Accounts
+                </div>
+                <a href="/addemployee">
+                  <button >
+                  <div class="p-1 md:p-2 bg-sky-500 hover:bg-sky-600 rounded justify-center items-center gap-2 flex">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" 
+                  class="w-6 h-6 text-white">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                  </svg>
+                    <div class="text-white text-base font-medium md:font-semibold font-['Montserrat'] leading-normal">Add New Employee Account</div>
+                </div>
+                </button>
+                </a>
+                
+              </div>
+            </div>
+    
+          </div>
+         
+          <div class="flex justify-center h-max-96 md:h-max-72"><!--accounts list table-->
+            <div class=" border overflow-auto border-slate-300 bg-white px-3 md:px-5">
+              <div class="text-black text-xl font-bold font-['Montserrat'] leading-[30px]">
+                Accounts
+              </div>
+
+              <div class="w-max">
+              <table class="table-auto text-md">
+              <thead>
+                <tr class="text-slate-500 pb-40">
+                  <th class="w-36 md:w-40 text-start">Name</th>
+                  <th class="w-52 md:w-56 text-start">Email</th>
+                  <th class="w-24 md:w-28 text-start">Address</th>
+                  <th class="w-16 text-start">age</th>
+                  <th class="w-20 text-start">gender</th>
+                  <th class="w-20 text-start">Position</th>
+                  <th class="w-32 text-start">Phone No.</th>
+                  <th class="w-24 md:w-28 text-start">Update</th>
+                  <th class="w-24 md:w-28 text-start">Delete</th>
+                </tr>
+              </thead>
+              <tbody class="text-sm font-medium">
+                <% if (users.length > 0) { %>
+                  <% users.forEach(user => { %>
+                <tr>
+                  <td><%= user.firstname %> <%= user.lastname %></td>
+                  <td><%= user.email %></td>
+                  <td><%= user.address %></td>
+                  <td><%= user.age %></td>
+                  <td><%= user.gender %></td>
+                  <td><%= user.position %></td>
+                  <td><%= user.phone %></td>
+                  <td>
+                    <button >
+                      <div class="p-1 md:p-2 bg-violet-700 hover:bg-violet-800 rounded justify-center items-center gap-2 flex">
+                        <div class="text-white text-base font-medium md:font-semibold font-['Montserrat'] leading-normal">Update User</div>
+                      </div>
+                    </button>
+                  </td>
+                  <td>
+                    <button >
+                      <div class="p-1 md:p-2 bg-pink-600 hover:bg-pink-700 rounded justify-center items-center gap-2 flex">
+                        <div class="text-white text-base font-medium md:font-semibold font-['Montserrat'] leading-normal">Delete User</div>
+                      </div>
+                    </button>
+                  </td>
+                </tr>
+                <% }) %>
+                <% } else { %>
+                  <tr>
+                    <td></td>
+                    <td>No Data To Display</td>
+                  </tr>
+                  <% } %>
+                </tbody>
+              </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <script src="/togglemenu.js"></script>
+  </body>
+</html>
